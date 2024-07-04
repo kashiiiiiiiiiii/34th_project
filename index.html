@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>simplexts</title>
+    <style>
+        /* ...........body........... */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+
+        body {
+            background: white;
+        }
+        .nav-header{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* .......header-section......... */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #21A5D5;
+            color: white;
+            padding: 0.8rem 5rem;
+        }
+
+        .left-section {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .title-section {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .title-section i {
+            color: black;
+        }
+
+        .social-icon {
+            display: flex;
+            gap: 2rem;
+            font-size: large;
+            color: #6dbfdd;
+        }
+
+        .title-section p {
+            font-size: 15px;
+        }
+
+        /* ......nav....... */
+
+        nav {
+            display: flex;
+            width: 88%;
+            margin: 1rem auto;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+        }
+        .nav-full{
+            width: 100%;
+            background: white;
+            padding: 1px 0;
+            box-shadow: 0px 2px 12px 1px lightgray;
+        }
+        .nav-icon {
+            width: 15%;
+            height: 20%;
+        }
+
+        ul li {
+            list-style: none;
+            text-transform: capitalize;
+        }
+
+        ul i {
+            font-size: 14px;
+        }
+
+        ul {
+            display: flex;
+            gap: 2rem;
+            margin-left: 3.5rem;
+        }
+
+        .nav-button {
+            background: #21A4D4;
+            padding: 0.9rem 2rem;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: capitalize;
+            margin-left: auto;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .nav-button:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .nav-list i {
+            font-size: 2.5rem;
+            display: none;
+        }
+
+        /* ....front.... */
+
+        .front {
+            display: flex;
+            width: 85%;
+            margin: 8rem auto;
+        }
+
+        .front .title-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 55%;
+            gap: 2.5rem;
+            padding: 7rem 0.7rem 3rem 0.7rem;
+        }
+
+        .front .title-section p {
+            font-size: 1.3rem;
+            align-self: flex-start;
+        }
+
+        .title-section h2 {
+            font-size: 2.5rem;
+            align-self: flex-start;
+        }
+
+        .demo-button {
+            background-color: #21A5D5;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            font-size: medium;
+            align-self: flex-start;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .demo-button:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .front-image {
+            background-size: cover;
+            background-position: 100% 100%;
+        }
+
+        .image-section {
+            padding: 0.8rem;
+        }
+
+
+        /* ............industry.......... */
+        .industry {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding-top: 18rem;
+        }
+
+        .industry h2 {
+            align-self: center;
+            font-size: 2rem;
+            font-weight: lighter;
+        }
+
+        .industry-image {
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .industry-image p {
+            align-self: center;
+        }
+
+        .industry-images {
+            display: flex;
+            padding: 1rem;
+            justify-content: space-between;
+            background-color: white;
+        }
+
+        .industry-full {
+            padding-bottom: 4rem;
+            background: #21A5D5;
+            color: white;
+            clip-path: path('M0,64 C400,100 800,400 1200,200 S1600,100 2000,300 V600 H0 Z');
+        }
+
+        /* ..............customer......... */
+
+
+        .customer {
+            display: flex;
+            width: 85%;
+            gap: 1rem;
+            margin: auto;
+            align-items: center;
+            padding: 8rem 1rem;
+        }
+
+        .logo-images {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .d-customer,
+        .logo-customer {
+            width: 50%;
+            margin: auto;
+        }
+
+        .logo-customer {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .logo-images img {
+            width: 100px;
+        }
+
+        .d-customer {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .d-customer p {
+            color: gray;
+            font-size: large;
+        }
+
+        .d-customer h2 {
+            font-size: 3rem;
+            font-weight: lighter;
+        }
+
+        /* .............simplex-icons........ */
+        .simplex-main {
+            width: 100%;
+            margin: auto;
+            background: #21A4D4;
+        }
+
+        .simplex {
+            width: 80%;
+            margin: auto;
+            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            align-items: center;
+            padding: 5rem 3rem;
+        }
+
+        .simplex h2 {
+            font-size: 1.8rem;
+        }
+
+        .simplex-cards {
+            display: flex;
+            background-color: #21A4D4;
+            color: gray;
+            gap: 1rem;
+        }
+
+        .simplex-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            background-color: white;
+            border-radius: 40px;
+            padding: 0.5rem;
+            box-shadow: 0px 0px 8px 0.5px black;
+        }
+
+        .icon {
+            width: 135px;
+            height: 135px;
+        }
+
+        .icons {
+            width: 160px;
+            height: 135px;
+            padding-bottom: 1rem;
+        }
+
+        .simplex-card img {
+            width: 60%;
+        }
+
+        .simplex-cards p {
+            font-size: large;
+        }
+
+        /* .............simplex-video.......... */
+        .simplex-video {
+            height: 90vh;
+        }
+
+        .simplex-video video {
+            object-fit: cover;
+        }
+
+        /* ...............ecommerce................ */
+        .ecommerce {
+            width: 100%;
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ecommerce-s {
+            display: flex;
+            justify-content: space-between;
+            width: 82%;
+            margin: auto;
+        }
+
+        .left-e,
+        .right-e {
+            width: 50%;
+        }
+
+        .right-e {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 1s;
+            /* border-top: 1px solid lightgray; */
+            /* border-left: 1px solid lightgray; */
+            border-right: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .right-e h2 {
+            padding: 0.9rem 1.5rem;
+            border: 1px solid transparent;
+            font-weight: lighter;
+            font-size: 1.2rem;
+            transition: all 1s;
+            cursor: pointer;
+        }
+
+        .right-e h2:hover {
+            border: 1px solid transparent;
+            border-top: 1px solid lightgray;
+            border-left: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+            color: #21A4D4;
+
+        }
+
+        .ecommerce-empty {
+            width: 82%;
+            display: flex;
+            margin: auto;
+        }
+
+        .empty-left,
+        .empty-right {
+            width: 50%;
+            padding: 1rem;
+            border: 1px solid transparent;
+        }
+
+        .empty-left {
+            border-top: 1px solid lightgray;
+            border-left: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .empty-right {
+            border-right: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+        }
+
+
+        /* ..............androidios........... */
+
+        .androidios {
+            width: 82%;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .android-t p {
+            font-size: x-large;
+            color: gray;
+        }
+
+        .android-t h2 {
+            font-size: 2rem;
+            font-weight: lighter;
+        }
+
+        .android-t {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .android-section {
+            display: flex;
+            padding: 2rem 0;
+        }
+
+        .android-d,
+        .android-image {
+            width: 50%;
+            padding: 0.7rem;
+        }
+
+        .android-d {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .android-d h2 {
+            font-size: 2rem;
+            font-weight: lighter;
+        }
+
+        .android-d p {
+            font-size: large;
+            color: gray;
+            font-weight: lighter;
+        }
+
+        /* ..............mobilefriendly......... */
+        .mobilefriendly {
+            width: 82%;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .mobile-section {
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 2rem 0;
+        }
+
+        .mobile-d,
+        .mobile-image {
+            width: 50%;
+            padding: 0.7rem;
+        }
+
+        .mobile-d {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-d h2 {
+            font-size: 2rem;
+            font-weight: lighter;
+        }
+
+        .mobile-d p {
+            font-size: large;
+            color: gray;
+            font-weight: lighter;
+        }
+
+
+        /* .............oprations-full....... */
+        .operation-full {
+            background-image: url('https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-23-1.png');
+            padding: 3.5rem 0 2.5rem 0;
+            color: white;
+        }
+
+        .operation-management {
+            width: 82%;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .operation-h h2 {
+            text-align: center;
+            color: white;
+            font-weight: lighter;
+            font-size: 28px;
+        }
+
+        .operation-section {
+            display: flex;
+            padding: 6rem 0 1rem 0;
+        }
+
+        .operation-d,
+        .operation-image {
+            width: 50%;
+            padding: 0.5rem;
+        }
+
+        .operation-image {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .operation-d {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .operation-d p {
+            margin-bottom: 1rem;
+            font-size: 20px;
+        }
+
+        .operation-d h2 {
+            font-size: xx-large;
+        }
+
+        ol {
+            padding-left: 2rem;
+        }
+
+        ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        .operation-management button {
+            background-color: white;
+            color: #21A4D4;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
+            transition: all 0.4s;
+            font-weight: bolder;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .button {
+            margin-left: 4rem;
+        }
+
+        .operation-management button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .operation-image img:hover {
+            scale: 1.1;
+        }
+
+        .operation-image img {
+            transition: all 0.4s;
+        }
+
+        /* ............trusted-customer......... */
+        .trusted-c{
+            width: 82%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 3rem auto;
+            text-align: center;
+            padding: 1rem 0.5rem;
+        }
+        .trusted-images{
+            display: flex;
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+        .trusted-c p{
+            font-size: large;
+        }
+        .trusted-c h2{
+            font-weight: lighter;
+        }
+        .blogandnews{
+            width: 100%;
+            background: #21A4D4;
+            color: white;
+            text-align: center;
+        }
+        /* ......blogandnews....... */
+        .blognews{
+            width: 82%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 3rem 0.5rem;
+            gap: 1.5rem;
+        }
+        .blog-cards{
+            display: flex;
+            gap: 1rem;
+        }
+        .blog-card{
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            color: black;
+            border-radius: 70px;
+            overflow: hidden;
+            padding: 0 0 1.5rem 0;
+        }
+        .blognews h2{
+            font-size: 28px;
+            font-weight: lighter;
+            margin-bottom: 2rem;
+        }
+        .blognews p{
+            font-size: x-large;
+        }
+        .blog-card p{
+            width: 90%;
+            margin: auto;
+            color: gray;
+            text-align: left;
+            font-size: 20px;
+            padding-left: 1rem;
+        }
+        .blog-card h6{
+            color: #21A4D4;
+            font-size: 12px;
+            width: max-content;
+            padding-left: 1.8rem;
+        }
+        .blog-card h5{
+            padding-right: 7.8rem;
+            color: lightgray;
+            font-weight: lighter;
+        }
+        .blog-card hr{
+            background: lightgray;
+            height: 0.1px;
+        }
+        .blog-button{
+            width: max-content;
+            padding: 0.8rem 1.7rem;
+            border: none;
+            color: #6dbfdd;
+            font-weight: bold;
+            background-color: white;
+            border-radius: 30px;
+            margin: auto;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .blog-button:hover{
+            background-color: black;
+            color: white;
+        }
+        /* <!-- .............contactus.......... --> */
+        .contactus{
+            width: 82%;
+            margin: 4rem auto;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        .contactus h2{
+                font-size: xx-large;
+                font-weight: lighter;
+                margin-bottom: 1.5rem;
+        }
+        .contactus p{
+            font-size: 20px;
+            color: #343A40;
+            margin-bottom: 1.5rem;
+        }
+        form input{
+            width: 98%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            font-size: 15px;
+            outline: none;
+        }
+        ::placeholder{
+            color:#AFAFAF;
+        }
+        form input:nth-child(4){
+            padding-bottom: 12rem;
+        }
+        .contact-button{
+            background: #21A4D4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.7rem 1.5rem;
+            font-weight: bold;
+            font-size: 15px;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .contact-button:hover{
+            background-color: black;
+            color: white;
+        }
+        /* ........keepintouch.......... */
+        .keepintouch-full{
+            width: 100%;
+            padding: 4rem 0;
+            background: #141519;
+        }
+        .keepintouch{
+            width: 82%;
+            margin: auto;
+            padding: 0.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .keepintouch h2{
+            color: white;
+        }
+        .touch-icons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            gap: 2rem;
+            color: #7d7b7b;
+        }
+        .touch-icons a i{
+            color: #7d7b7b;
+        }
+        .touch-icons a i:hover{
+            color: white;
+        }
+        .touch-icons a i{
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+        /* ............simplespa-full........ */
+        .simplespa-full{
+            width: 100%;
+            padding: 4rem 0;
+            background: #21A4D4;
+            color: white;
+        }
+        .simple-spa{
+            display: flex;
+            width: 70%;
+            margin: auto;
+            padding: 0.5rem;
+        }
+        .simple-image{
+            width: 22%;
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .simple-d{
+            display: flex;
+            width: 50%;
+         }
+         .simple-image{
+            width: 50%;
+         }
+         .simple-details{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+         }
+         .simple-d ul{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            gap: 0.5rem;
+         }
+         .simple-details p{
+            font-size: large;
+            font-weight: bold;
+        }
+        .simple-image img{
+            width: 22%;
+            height: 22%;
+            padding-left: 5rem;
+        }
+        .simple-d ul li{
+            font-size: 15px;
+        }
+        .simple-detail ul{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            gap: 0.5rem;
+        }
+        .simple-detail ul li{
+            font-size: 15px;
+            padding-right: 2rem;
+        }
+        .simple-detail p{
+            font-size: large;
+            font-weight: bold;
+         }
+         /* ..............footer............. */
+         footer h2{
+            margin: 2rem 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: larger;
+         }
+         
+
+
+
+
+
+        /* .....media query....... */
+
+
+
+
+        @media only screen and (max-width:600px) {
+            nav{
+
+            }
+            .left-section {
+                display: none;
+            }
+
+
+            /* .....header....... */
+
+            header {
+                align-self: flex-start;
+                padding: 0.8rem 0.8rem;
+            }
+
+            /* .......nav........ */
+            nav {
+                justify-content: space-between;
+                width: 95%;
+                margin: 1rem 0.8rem;
+            }
+
+            nav ul,
+            .nav-button {
+                display: none;
+            }
+
+            .nav-list i {
+                display: block;
+            }
+
+            .nav-icon {
+                width: 50%;
+                height: 50%;
+            }
+
+            .nav-list i {
+                margin-right: 1rem;
+            }
+
+            /* ......front....... */
+
+            .front-image {
+                display: none;
+            }
+
+            .front {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+            }
+
+            .front .title-section {
+                width: 96%;
+                margin: auto;
+                gap: 4rem;
+            }
+
+            .front .title-section p {
+                font-size: 1rem;
+            }
+
+            .front .title-section h2 {
+                font-size: 1.8rem;
+                width: 95%;
+            }
+
+            .front-image {
+                display: block;
+                width: 96%;
+                margin: auto;
+            }
+
+            /* .......Industry...... */
+            .industry {
+                width: 100%;
+            }
+
+            .industry h2 {
+                width: 80%;
+                text-align: center;
+                font-size: x-large;
+                font-weight: bold;
+            }
+
+            .industry-image:nth-child(even) {
+                display: none;
+            }
+
+            .industry-images {
+                width: 100%;
+                justify-content: space-between;
+                margin: auto;
+            }
+
+            .industry-full {
+                clip-path: path('M0,64 C200,100 400,200 600,150 S800,100 1000,200 V600 H0 Z');
+                padding-bottom: 0;
+                padding-top: 0;
+
+            }
+
+            .industry-image {
+                margin-right: 2rem;
+            }
+
+            .industry-image p {
+                width: 200%;
+                text-align: center;
+            }
+
+            /* .............customer............ */
+            .customer {
+                flex-direction: column;
+                width: 95%;
+                margin: auto;
+                padding: 0;
+            }
+
+            .d-customer {
+                width: 100%;
+                margin: auto;
+                margin-top: 3rem;
+            }
+
+            .d-customer p{
+                font-size: 15px;
+            }
+            .d-customer h2{
+                font-size: 2.5rem;
+            }
+
+            .logo-customer {
+                width: 100%;
+                margin: auto;
+                padding: 0;
+                justify-content: space-between;
+            }
+
+            .logo-customer {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                margin-top: 2rem;
+            }
+
+            /* .............simplex-icons........ */
+            .simplex-cards {
+                flex-direction: column;
+                width: 100%;
+                margin: auto;
+            }
+
+            .simplex-card {
+                width: 95%;
+                height: 120px;
+            }
+
+            .simplex-card img {
+                width: 25%;
+            }
+
+            .simplex h2 {
+                width: max-content;
+                font-size: x-large;
+            }
+
+            .simplex {
+                margin: 0;
+                width: 90%;
+                margin: auto;
+                padding: 0;
+            }
+
+            .simplex-main {
+                padding: 6rem 0;
+            }
+
+            /* .............ecommerce......... */
+            .ecommerce-s {
+                width: 95%;
+                margin: auto;
+            }
+
+            .ecommerce-s .left-e {
+                display: none;
+            }
+
+            .right-e {
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .right-e h2 {
+                font-size: small;
+                border: 1px solid lightgray;
+            }
+
+            .ecommerce-empty {
+                display: none;
+            }
+
+            /* .........androidios......... */
+            .androidios {
+                width: 92%;
+                margin: auto;
+                padding: 0;
+                padding: 0.5rem;
+            }
+
+            .android-section {
+                flex-direction: column;
+            }
+
+            .android-d,
+            .android-image {
+                width: 97%;
+                padding: 0;
+                padding: 0.5rem;
+            }
+
+            .android-t p {
+                font-size: small;
+            }
+
+            .android-t h2 {
+                font-size: 1.5rem;
+            }
+
+            .android-d h2 {
+                font-size: 1.5rem;
+            }
+
+            /* .........mobilefriendly........ */
+
+            .mobilefriendly {
+                width: 92%;
+                margin: auto;
+                padding: 0;
+                padding: 0.5rem;
+            }
+
+            .mobile-section {
+                flex-direction: column;
+                flex-direction: column-reverse;
+            }
+
+            .mobile-d,
+            .mobile-image {
+                width: 97%;
+                padding: 0;
+                padding: 0.5rem;
+            }
+
+            .mobile-d h2 {
+                font-size: 1.5rem;
+            }
+
+            /* ..........operation-full........ */
+            .operation-management {
+                width: 95%;
+                margin: auto;
+            }
+
+            .operation-h h2 {
+                font-size: x-large;
+            }
+
+            .operation-section {
+                flex-direction: column;
+            }
+
+            .operation-d,
+            .operation-image {
+                width: 95%;
+            }
+
+            .operation-d p {
+                font-size: medium;
+            }
+
+            .operation-d h2 {
+                font-size: x-large;
+                font-weight: lighter;
+            }
+            /* .........trusted-customer........ */
+            .trusted-c{
+                width: 95%;
+                margin: 3rem auto;
+            }
+            .trusted-c p{
+                font-size: small;
+            }
+            .trusted-c h2{
+                font-size: 1.7rem;
+            }
+            .trusted-images :nth-child(2){
+                display: none;
+            }
+
+            /* ......blogandnews....... */
+            .blog-cards{
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            .blog-card{
+                padding: 0 0 1.5rem 0;
+            }
+            .blog-card h5{
+                text-align: left;
+                padding: 0;
+                margin-left: 1.5rem;
+            }
+            .blog-image img{
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            }
+            .blog-image{
+                height: 150px;
+            }
+            .blog-card h6{
+                font-size: x-small;
+                padding-left: 1.5rem;
+            }
+            /* ...........contactus......... */
+            .contactus h2{
+                font-size: x-large;
+            }
+            .contactus p{
+                font-size: small;
+            }
+            form input{
+                width: 92%;
+                margin: auto;
+                margin-bottom: 1.5rem;
+            }
+            /* .........keepintouch........ */
+            .touch-icons{
+                font-size: 1rem;
+                gap: 1rem;
+            }
+            /* ............simplespa-full........... */
+            .simple-spa{
+                width: 82%;
+                display: flex;
+                flex-direction: column;
+            }
+            .simple-image,.simple-d{
+                width: 100%;
+            }
+            .simple-image img{
+                width: 25%;
+                padding-left: 2rem;
+            }
+            .simple-detail{
+                width: 50%;
+            }
+            .simple-detail ul li{
+                font-size: x-small;
+            }
+            .simple-details ul li{
+                font-size: x-small;
+            }
+            .simple-detail{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+         }
+         .simple-details{
+            padding: 0.5rem;
+         }
+         .simple-details:nth-child(2){
+            padding-top: 3rem;
+         }
+         /* .............footer............ */
+         footer h2{
+            font-size: small;
+            margin-top: 1rem;
+         }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .........navandheader........ -->
+     <div class="nav-header">
+    <!-- ..........header-section........ -->
+    <header>
+        <section class="left-section">
+            <section class="title-section">
+                <i class="bi bi-envelope-fill"></i>
+                <p>Hello@simplexts.net
+                </p>
+            </section>
+            <section class="title-section">
+                <i class="bi bi-geo-alt-fill"></i>
+                <p>Sydney, Dubai, Pakistan</p>
+            </section>
+        </section>
+        <section class="right-section">
+            <section class="social-icon">
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-facebook"></i>
+            </section>
+        </section>
+    </header>
+
+    <!-- ....nav...... -->
+     <div class="nav-full">
+    <nav>
+        <section class="nav-icon">
+            <img width="100%" src="https://simplexts.net/wp-content/uploads/2022/12/main-logo-1-1.png"
+                alt="SimpleX logo">
+        </section>
+        <ul class="nav-item">
+            <li>solutions <i class="bi bi-caret-down-fill"></i></li>
+            <li>products <i class="bi bi-caret-down-fill"></i></li>
+            <li>services <i class="bi bi-caret-down-fill"></i></li>
+            <li>about us</li>
+            <li>careers</li>
+            <li>blogs</li>
+            <li>simpleX news</li>
+        </ul>
+        <button class="nav-button">contact us <i class="bi bi-arrow-right"></i></button>
+        <section class="nav-list"><i class="bi bi-list"></i></section>
+    </nav>
+</div>
+</div>
+    <!-- .........front......... -->
+
+
+    <main class="front">
+        <section class="title-section">
+            <p>SimpleX</p>
+            <h2>Transforming Restaurants Into Digital Powerhouse!</h2>
+            <button class="demo-button">Book A Demo</button>
+        </section>
+        <section class="image-section">
+            <img class="front-image" width="100%"
+                src="https://simplexts.net/wp-content/uploads/2023/05/Untitled-design-79.png" alt="SimpleX Image">
+        </section>
+    </main>
+
+    <!-- .......industry....... -->
+
+    <section class="industry-full">
+        <section class="industry">
+            <h2>A Complete Solution For Restaurant Industry</h2>
+            <section class="industry-images">
+                <section class="industry-image">
+                    <img width="100%"
+                        src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-15-qg5z25r745osciwg997vx6pssnrdc974yxqkos082w.png"
+                        alt="SimpleX Images">
+                    <p>Sales growth</p>
+                </section>
+                <section class="industry-image">
+                    <img width="100%"
+                        src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-15-qg5z25r745osciwg997vx6pssnrdc974yxqkos082w.png"
+                        alt="SimpleX Images">
+                    <p>Sales growth</p>
+                </section>
+                <section class="industry-image">
+                    <img width="100%"
+                        src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-15-qg5z25r745osciwg997vx6pssnrdc974yxqkos082w.png"
+                        alt="SimpleX Images">
+                    <p>Sales growth</p>
+                </section>
+                <section class="industry-image">
+                    <img width="100%"
+                        src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-15-qg5z25r745osciwg997vx6pssnrdc974yxqkos082w.png"
+                        alt="SimpleX Images">
+                    <p>Sales growth</p>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <!-- .............customer.................. -->
+
+    <section class="customer">
+        <section class="d-customer">
+            <p>Our Customers</p>
+            <h2>We Work With the Best Partners</h2>
+            <p>Take advantage of this turnkey ecommerce solutions, improve top and bottom lines. Increase your customers
+                and revenue.</p>
+        </section>
+        <section class="logo-customer">
+            <section class="logo-images">
+                <img width="100%"
+                    src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-17-qg5zwsbvstm4n4ewezt9nyhhlmsx57sa6iz4mclfc8.png"
+                    alt=""><img width="100%"
+                    src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-17-qg5zwsbvstm4n4ewezt9nyhhlmsx57sa6iz4mclfc8.png"
+                    alt="">
+            </section>
+            <section class="logo-images">
+                <img width="100%"
+                    src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-17-qg5zwsbvstm4n4ewezt9nyhhlmsx57sa6iz4mclfc8.png"
+                    alt=""><img width="100%"
+                    src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-17-qg5zwsbvstm4n4ewezt9nyhhlmsx57sa6iz4mclfc8.png"
+                    alt="">
+            </section>
+            <section class="logo-images">
+                <img width="100%"
+                    src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-17-qg5zwsbvstm4n4ewezt9nyhhlmsx57sa6iz4mclfc8.png"
+                    alt=""><img width="100%"
+                    src="https://simplexts.net/wp-content/uploads/elementor/thumbs/Untitled-design-17-qg5zwsbvstm4n4ewezt9nyhhlmsx57sa6iz4mclfc8.png"
+                    alt="">
+            </section>
+        </section>
+    </section>
+
+
+    <!-- .........simplex-icons....... -->
+    <div class="simplex-main">
+        <div class="simplex">
+            <h2>What You Get With SimpleX</h2>
+            <div class="simplex-cards">
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icon">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+            </div>
+            <div class="simplex-cards">
+                <div class="simplex-card icons">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icons">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icons">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icons">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icons">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <div class="simplex-card icons">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                        alt="">
+                    <p>Lorem, ipsum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ........simplex-video.......... -->
+    <div class="simplex-video">
+        <video width="100%" height="100%" src="https://simplexts.net/wp-content/uploads/2023/12/video-for-marketing.mp4"
+            autoplay muted loop></video>
+    </div>
+
+    <!-- ..........ecommerce......... -->
+
+    <div class="ecommerce">
+        <div class="ecommerce-s">
+            <div class="left-e"></div>
+            <div class="right-e">
+                <h2 class="ecommerce-e">ecommerce</h2>
+                <h2 class="ecommerce-m">marketing</h2>
+                <h2 class="ecommerce-m">data analytics</h2>
+            </div>
+        </div>
+        <div class="ecommerce-empty">
+            <div class="empty-left"></div>
+            <div class="empty-right"></div>
+        </div>
+    </div>
+    <!-- .......andriodios........ -->
+    <div class="androidios">
+        <div class="android-t">
+            <p>eCommerce</p>
+            <h2>PowerUp Your Brand
+                With SimpleX</h2>
+        </div>
+        <div class="android-section">
+            <div class="android-d">
+                <img width="10%" height="10%"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO30o_YGVva2u0bIfSvbTn05GhbWBwI7cC1Slw36ghn9PHFR1b"
+                    alt="">
+                <h2>Android/ IOS</h2>
+                <p style="font-size: x-large;">Mobile App Development</p>
+                <p>We understand the unique needs of the restaurant industry and tailor our mobile app development
+                    services to meet your specific requirements</p>
+            </div>
+            <div class="android-image">
+                <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-85-1.png"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- .....mobilefriendly....... -->
+    <div class="mobilefriendly">
+        <div class="mobile-section">
+            <div class="mobile-d">
+                <img width="10%" height="10%"
+                    src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-vfFi76XOBTrl5hf8A9rYJl4z1wMqMMlCfQBjD4zM9RgDtkzk"
+                    alt="">
+                <h2>Mobile-Friendly</h2>
+                <p style="font-size: x-large;">Mobile App Development</p>
+                <p>The restaurant industry is a competitive one, and businesses need to find ways to stand out from the
+                    crowd. One way to do this is to invest in mobile-friendly web development.</p>
+            </div>
+            <div class="mobile-image">
+                <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-83-1.png"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <div class="androidios">
+        <div class="android-section">
+            <div class="android-d">
+                <img width="10%" height="10%"
+                    src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS1wIGlCw_VcMAzY46lczazuj7eJh6YmpJzImtqozxPd8Zq7t4w"
+                    alt="">
+                <h2>Kiosk</h2>
+                <p style="font-size: x-large;">Kiosk Development</p>
+                <p>Restaurants are constantly looking for ways to differentiate themselves and attract new customers.
+                    Kiosk development is a powerful tool that can help restaurants achieve both of these goals.</p>
+            </div>
+            <div class="android-image">
+                <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-84-1.png"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- ............operation-full........ -->
+    <div class="operation-full">
+        <div class="operation-management">
+            <div class="operation-h">
+                <h2>Simplex Go for Operations Management</h2>
+            </div>
+            <div class="operation-section">
+                <div class="operation-d">
+                    <p>It is more important than ever to have a streamlined and efficient operations management system.
+                        Simplex Operations Management System (OMS) is a cloud-based solution that helps businesses of
+                        all sizes to automate and streamline their operations, improve efficiency, and boost profits.
+                    </p>
+                    <h2>Highlighted Features</h2>
+                    <ol>
+                        <li>Staff task assignment &</li>
+                        <li>tracking Track & improve compliance</li>
+                        <li>Digitalize your food audits</li>
+                        <li>Inventory Management</li>
+                        <li>Order Management</li>
+                        <li>Customer relationship management (CRM</li>
+                    </ol>
+                </div>
+                <div class="operation-image">
+                    <img width="70%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-24-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="button"><button>Book A Demo</button></div>
+        </div>
+    </div>
+    <!-- ...........trusted-customer...... -->
+     <div class="trusted-c">
+        <h2>See What We Have Done for Our Trusted Customers
+        </h2>
+        <p>Having bundle of experience about making latest tech project that helpful in modern era in digital tasks.</p>
+        <div class="trusted-images">
+            <div class="trusted-image">
+                <img width="100%" height="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-27-1-1024x576.png" alt="">
+            </div>
+            <div class="trusted-image">
+                <img width="100%" height="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-28-1-1024x576.png" alt="">
+            </div>
+        </div>
+     </div>
+     <!-- .........blog&news.......... -->
+      <div class="blogandnews">
+          <div class="blognews">
+              <p>Blog & News</p>
+        <h2>Read Our Latest Articles & News</h2>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2024/06/Simplexts.net-1-400x400.png" alt="">
+                </div>
+                <p>Untangling the Web: Why Google Tag Manager (GTM) is the Key to Seamless Analytics Integration </p>
+                <h6>READ MORE »</h6>
+                <hr>
+                <h5>June 13, 2024 No Comments</h5>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2024/04/Add-a-little-bit-of-body-text-3-1-1-400x400.png" alt="">
+                </div>
+                <p>Untangling the Web: Why Google Tag Manager (GTM) is the Key to Seamless Analytics Integration </p>
+                <h6>READ MORE »</h6>
+                <hr>
+                <h5>June 13, 2024 No Comments</h5>
+            </div>
+            <div class="blog-card">
+               <div class="blog-image">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2024/05/Simplexts.net-1-400x400.png" alt="">
+                </div>
+                <p>Untangling the Web: Why Google Tag Manager (GTM) is the Key to Seamless Analytics Integration </p>
+                <h6>READ MORE »</h6>
+                <hr>
+                <h5>June 13, 2024 No Comments</h5>
+            </div>
+        </div>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2024/05/Add-a-little-bit-of-body-text-2-1-400x400.png" alt="">
+                </div>
+                <p>Untangling the Web: Why Google Tag Manager (GTM) is the Key to Seamless Analytics Integration </p>
+                <h6>READ MORE »</h6>
+                <hr>
+                <h5>June 13, 2024 No Comments</h5>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2024/06/Simplexts.net-1-400x400.png" alt="">
+                </div>
+                <p>Untangling the Web: Why Google Tag Manager (GTM) is the Key to Seamless Analytics Integration </p>
+                <h6>READ MORE »</h6>
+                <hr>
+                <h5>June 13, 2024 No Comments</h5>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img width="100%" src="https://simplexts.net/wp-content/uploads/2024/04/Add-a-little-bit-of-body-text-3-1-1-400x400.png" alt="">
+                </div>
+                <p>Untangling the Web: Why Google Tag Manager (GTM) is the Key to Seamless Analytics Integration </p>
+                <h6>READ MORE »</h6>
+                <hr>
+                <h5>June 13, 2024 No Comments</h5>
+            </div>
+        </div>
+        <button class="blog-button">Read More</button>
+    </div>
+</div>
+<!-- .............contactus.......... -->
+ <div class="contactus">
+    <h2>Contact Us</h2>
+    <p>Have a query or want a cup of tea with us? Fill in the form and one of our representatives will get back to you shortly</p>
+    <form action="">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <input type="text" placeholder="Subject">
+        <input type="text" placeholder="Message">
+    </form>
+    <button class="contact-button">Send Message</button>
+ </div>
+ <!-- ............... -->
+  <div class="keepintouch-full">
+      <div class="keepintouch">
+          <h2>KEEP IN TOUCH</h2>
+          <div class="touch-icons">
+              <a href="https://www.twitter.com/"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- ............simple-spa....... -->
+     <div class="simplespa-full">
+        <div class="simple-spa">
+            <div class="simple-image">
+                <img width="100%" src="https://simplexts.net/wp-content/uploads/2023/12/Untitled-design-91-1.png" alt="">
+                <div class="simple-detail">
+                <p>Solutions</p>
+            <ul>
+                <li>Omnichannel Ecommerce</li>
+                <li>Ecommerce Marketplace</li>
+                <li>CRM Automation</li>
+                <li>Actionable Insights</li>
+                <li>Online Ordering</li>
+                <li>Operational Compliance</li>
+            </ul>
+            </div>
+            </div>
+            <div class="simple-d">
+                <div class="simple-details">
+                    <p>Products</p>
+                <ul>
+                    <li>Mobile App Development</li>
+                    <li>Loyalty Programs</li>
+                    <li>Order Management System</li>
+                    <li>Operations Management System</li>
+                </ul>
+                </div>
+                <div class="simple-details">
+                    <p>About Simplex</p>
+                <ul>
+                    <li>About Us</li>
+                    <li>Blogs</li>
+                    <li>Simplex News</li>
+                    <li>Careers</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+     </div>
+     <!-- .....simplex-footer....... -->
+      <footer>
+        <h2>©2024 Simplex Technology Solutions. All Rights Reserved.
+        </h2>
+      </footer>
+</body>
+
+</html>
